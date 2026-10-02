@@ -2,7 +2,7 @@
 
 My super cool DIY secret-agent cyber console! It is kind of like a Flipper Zero, but way more powerful, cheaper, and shaped like a retro handheld game console.
 
-![VAYUDEX Concept](hardware_concept.png)
+![VAYUDEX Concept](Concept.png)
 
 ## What is this?
 I always wanted a Flipper Zero to play with invisible radio waves, open gates, and tap school ID cards, but it was way too expensive to buy in India. So I decided to just build my own! 
