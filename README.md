@@ -1,6 +1,6 @@
 # VAYUDEX
 
-My super cool DIY secret-agent cyber console! It is kind of like a Flipper Zero, but way more powerful, cheaper, and shaped like a retro handheld game console.
+My super cool DIY secret-agent cyber console! It is kind of like a Flipper Zero, but way more powerful, cheaper, and shaped like a retro handheld game console. (end product will look like this this like the inspiration of the console, like a console ,sorry it is a console!)
 
 ![VAYUDEX Concept](Concept.png)
 
