@@ -1,26 +1,28 @@
 # VAYUDEX
 
-My super cool DIY secret-agent cyber console! It is kind of like a Flipper Zero, but way more powerful, cheaper, and shaped like a retro handheld game console. (end product will look like this this like the inspiration of the console, like a console ,sorry it is a console!)
+A vertical, handheld multi-protocol wireless security and auditing terminal inspired by the Flipper Zero, built around the ESP32-S3.
 
-![VAYUDEX Concept](Concept.png)
+<p align="center">
+  <img src="hardware_concept.png" alt="VAYUDEX Hardware Concept" width="550"/>
+</p>
 
-## What is this?
-I always wanted a Flipper Zero to play with invisible radio waves, open gates, and tap school ID cards, but it was way too expensive to buy in India. So I decided to just build my own! 
+## Overview
+VAYUDEX combines Sub-1 GHz RF, NFC, 125 kHz RFID, Infrared transmission, and BadUSB automation into a dedicated portable portrait console form factor. Powered by a 240 MHz dual-core ESP32-S3 with 8MB Octal PSRAM and a 3.5-inch color IPS display, VAYUDEX features native Wi-Fi/BLE network analysis, DMA-buffered signal logging, and an integrated power management system.
 
-Instead of an old-school orange screen, VAYUDEX has a big bright colorful screen with real gaming buttons. Inside, it can listen to radio remotes, talk to cards, control TVs with invisible light, and connect to Wi-Fi!
+## Hardware Specifications
+* **Microcontroller:** ESP32-S3-WROOM-1 (Dual-Core Xtensa LX7 @ 240 MHz, 8MB Flash, 8MB PSRAM)
+* **Display:** 3.5-inch IPS Color Panel (ST7796 driver, 480x320 resolution, dedicated 40MHz SPI)
+* **Sub-1 GHz Transceiver:** TI CC1101 (315/433/868 MHz) + 433MHz helical spring antenna with discrete LC balun
+* **NFC (13.56 MHz):** PN532 Breakout (Read/Write/Emulate ISO14443A/Mifare)
+* **Low-Frequency RFID (125 kHz):** RDM6300 + external wire-wound resonant coil frontend
+* **Infrared System:** 940 nm High-Power IR LED driven by 2N2222 NPN BJT + TSOP38238 38kHz demodulator
+* **Storage Interface:** Push-push MicroSD socket operating via native 1-bit SDMMC DMA host
+* **USB & HID:** Native ESP32-S3 USB OTG (BadUSB / DuckyScript execution) + USBLC6-2SC6 ESD clamp protection
+* **Power Subsystem:** 3.7V 2500mAh 1S LiPo pouch battery + TP4056 USB-C charging circuit + AP2112K-3.3 ultra-low-dropout regulator
+* **Controls:** 4-Way tactile D-pad + A/B/X/Y gaming button cluster with 10k pull-ups and 100nF RC debouncing
 
-## What parts make it work?
-* **Super Brain (ESP32-S3):** A crazy fast computer chip with Wi-Fi and Bluetooth that runs everything.
-* **Big Color Screen:** A 3.5-inch screen with full colors so menus look like a real game.
-* **Secret Radio Antenna (CC1101):** Catches radio signals from garage remotes and wireless doorbells through the air.
-* **Magic Card Tapper (PN532):** Reads and copies tap-to-pay style smart cards and tags.
-* **Old-School Badge Reader:** Picks up older key fobs and building entry cards.
-* **Invisible TV Blaster:** A tiny infrared light that can change channels or turn off TVs from across the room.
-* **Computer Prank / Typer (BadUSB):** Plugs into a computer using USB and types super fast like a robot.
-* **Rechargeable Battery:** A flat battery inside that charges up with a normal USB-C phone cable.
-* **Game Buttons:** A D-pad plus A, B, X, Y buttons and thumbsticks so it feels just like playing a Game Boy.
-
-## What is inside this folder?
-* `/schematics`: The blueprint drawings showing how all the wires and chips connect together.
-* `/firmware`: The code I wrote to make the buttons work and draw the menus on screen.
-* `/cad`: The 3D files to print out the plastic shell so all the parts fit inside.
+## Repository Structure
+* `/docs/images`: Hardware architecture diagrams, schematics, KiCad DRC passes, and mechanical stackup renders
+* `/schematics`: Hardware pinout allocation matrices and connection mapping
+* `/firmware`: Microcontroller startup code, SPI bus isolators, and 1-bit SDMMC driver initialization
+* `bom.csv`: Complete Tier 2 Bill of Materials ($65.00 funding allocation)
